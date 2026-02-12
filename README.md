@@ -12,7 +12,7 @@ graph LR
   Queue --> DeliveryService
   DeliveryService --> ClientB
   ClientB --> API
-
+```
 
 ## 🔁 Part 2 — Sequence Diagram (25%)
 
@@ -59,3 +59,4 @@ sequenceDiagram
   ClientB->>API: ACK read (messageId)
   API->>Msg: ackRead(messageId)
   Msg->>DB: update status=read
+```
