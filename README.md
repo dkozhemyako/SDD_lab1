@@ -4,14 +4,14 @@
 
 ```mermaid
 graph LR
-  A[Client A (Web/Mobile)] -->|HTTP| API[Backend API]
-  B[Client B (Web/Mobile)] -->|HTTP/WebSocket| API
+  A[Client A (Web or Mobile)] -->|HTTP| API[Backend API]
+  B[Client B (Web or Mobile)] -->|HTTP or WebSocket| API
 
-  API --> Auth[Auth / Session]
+  API --> Auth[Auth and Session]
   API --> MS[Message Service]
   MS --> DB[(Messages DB)]
   MS --> Q[(Message Queue)]
   Q --> DS[Delivery Service]
-  DS -->|WebSocket push / Push notification| B
+  DS -->|WebSocket push or Push notification| B
 
-  B -->|ACK delivered/read (HTTP)| API
+  B -->|ACK delivered and read (HTTP)| API
